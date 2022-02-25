@@ -1,5 +1,6 @@
 ## Block Diagram
-https://nevonprojects.com/portable-induction-cooktop-with-time-temperature-settings/
+![p](https://user-images.githubusercontent.com/98813735/155763655-237af321-f1d2-4abf-850a-8fe995058492.jpg)
+
 
 ## Flow Chart
-https://lens.google.com/search?p=ASQ0Rg33KBjfp3wdzIPtOARp5AMWn1DchvA7JykdfLA8r2_UnYKMul2fKmaunJRA2e8CkvZ-IBWnHYR_ytMXKE_iChtR6pDA7iMDiNssFIr4R6BFpJb4QRJCG8_gyke8jTkKMVgX6FzoqvlFpo6s8kDAXaicupaRY2r5K5XqkKc09ZhQxgCIbXlC1eMyzxFskhph6-h78Ub9snEtMNZORNI7DeEEn_7hCHCaUUtrqmKwDE5r9ayQ68Nb09jjQuuLLlw3LvZkFInUreUO-Y3SnAqomtIHrxX1rG-O29Ku2OWgY_WSonm8WtqyAtyFPX11SiX1ef6muw%3D%3D&s&ep=crs&pli=1#lns=W251bGwsbnVsbCxbMzgsMCwyNSwyOF0sbnVsbCxudWxsLG51bGwsbnVsbCwiRWlZS0pEQTVZek5pTnpKa0xUazVPVFF0TkRjeE9TMWhOelExTFdNeE56VXpPVGhsWkRZMU1BPT0iLG51bGwsbnVsbCxudWxsLDFd
+![Flowchart](https://user-images.githubusercontent.com/98813735/155764018-be7e3961-3834-4651-9e65-d649d6ec781f.png)
