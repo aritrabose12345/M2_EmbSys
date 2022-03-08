@@ -1,5 +1,6 @@
 ## Block Diagram
-![p](https://user-images.githubusercontent.com/98813735/155763655-237af321-f1d2-4abf-850a-8fe995058492.jpg)
+![Arduino-temperature-data-logger-to-SD-card-and-computer-circuit](https://user-images.githubusercontent.com/98813735/157254010-bd23e9bb-6d44-45f0-98b5-92757c4ecc24.png)
+
 
 
 ## Flow Chart
