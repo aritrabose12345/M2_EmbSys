@@ -1,9 +1,11 @@
 ## Block Diagram
-![Arduino-temperature-data-logger-to-SD-card-and-computer-circuit](https://user-images.githubusercontent.com/98813735/157254010-bd23e9bb-6d44-45f0-98b5-92757c4ecc24.png)
+![Line-Follower-Circuit-Diagram](https://user-images.githubusercontent.com/98813735/157264217-037fb439-bd9f-4b5c-925d-8d77a376e3f1.png)
 
 
 
-## Schematics
-![11-20-d2d9p-wc8a5_8Rmw84XHBy](https://user-images.githubusercontent.com/98813735/157257373-f75962f5-d8ab-4162-b3b8-411c0561a6ec.jpg)
+## Flow Chart
+![Line-following-algorithm-flow-chart](https://user-images.githubusercontent.com/98813735/157265496-38423d06-09bd-4263-9e33-4ee1c058a039.png)
+
+
 
 
