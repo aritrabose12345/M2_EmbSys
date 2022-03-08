@@ -1,53 +1,108 @@
-// Arduino Line Follower Robot Code
+  int vSpeed = 110;        // MAX 255
+  int turn_speed = 230;    // MAX 255 
+  int turn_delay = 10;
+  
+//L293 Connection   
+  const int motorA1      = 8;  
+  const int motorA2      = 10; 
+  const int motorAspeed  = 9;
+  const int motorB1      = 12; 
+  const int motorB2      = 13; 
+  const int motorBspeed  = 11;
 
-#define enA 5//Enable1 L293 Pin enA 
-#define in1 6 //Motor1  L293 Pin in1 
-#define in2 7 //Motor1  L293 Pin in1 
-#define in3 9 //Motor2  L293 Pin in1 
-#define in4 10 //Motor2  L293 Pin in1 
-#define enB 8 //Enable2 L293 Pin enB 
-#define R_S 4//ir sensor Right
-#define L_S 2 //ir sensor Left
-void setup(){ 
-pinMode(R_S, INPUT); 
-pinMode(L_S, INPUT); 
-pinMode(enA, OUTPUT); 
-pinMode(in1, OUTPUT); 
-pinMode(in2, OUTPUT); 
-pinMode(in3, OUTPUT); 
-pinMode(in4, OUTPUT); 
-pinMode(enB, OUTPUT);
-digitalWrite(enA, HIGH); 
-digitalWrite(enB, HIGH); 
-delay(1000);
+//Sensor Connection
+  const int left_sensor_pin =A0;
+  const int right_sensor_pin =A1;
+
+  
+  
+  int left_sensor_state;
+  int right_sensor_state;
+
+void setup() {
+  pinMode(motorA1, OUTPUT);
+  pinMode(motorA2, OUTPUT);
+  pinMode(motorB1, OUTPUT);
+  pinMode(motorB2, OUTPUT);
+
+  Serial.begin(9600);
+
+  delay(3000);
+  
 }
-void loop(){  
-if((digitalRead(R_S) == 0)&&(digitalRead(L_S) == 0)){forward();}   //if Right Sensor and Left Sensor are at White color then it will call forword function
-if((digitalRead(R_S) == 1)&&(digitalRead(L_S) == 0)){turnRight();} //if Right Sensor is Black and Left Sensor is White then it will call turn Right function  
-if((digitalRead(R_S) == 0)&&(digitalRead(L_S) == 1)){turnLeft();}  //if Right Sensor is White and Left Sensor is Black then it will call turn Left function
-if((digitalRead(R_S) == 1)&&(digitalRead(L_S) == 1)){Stop();} //if Right Sensor and Left Sensor are at Black color then it will call Stop function
+
+void loop() {
+  
+
+  
+
+
+left_sensor_state = analogRead(left_sensor_pin);
+right_sensor_state = analogRead(right_sensor_pin);
+
+if(right_sensor_state > 500 && left_sensor_state < 500)
+{
+  Serial.println("turning right");
+
+  digitalWrite (motorA1,LOW);
+  digitalWrite(motorA2,HIGH);                       
+  digitalWrite (motorB1,LOW);
+  digitalWrite(motorB2,HIGH);
+
+  analogWrite (motorAspeed, vSpeed);
+  analogWrite (motorBspeed, turn_speed);
+  
+  }
+if(right_sensor_state < 500 && left_sensor_state > 500)
+{
+  Serial.println("turning left");
+  
+  digitalWrite (motorA1,HIGH);
+  digitalWrite(motorA2,LOW);                       
+  digitalWrite (motorB1,HIGH);
+  digitalWrite(motorB2,LOW);
+
+  analogWrite (motorAspeed, turn_speed);
+  analogWrite (motorBspeed, vSpeed);
+
+  delay(turn_delay);
+  }
+
+if(right_sensor_state > 500 && left_sensor_state > 500)
+{
+  Serial.println("going forward");
+
+  digitalWrite (motorA2,LOW);
+  digitalWrite(motorA1,HIGH);                       
+  digitalWrite (motorB2,HIGH);
+  digitalWrite(motorB1,LOW);
+
+  analogWrite (motorAspeed, vSpeed);
+  analogWrite (motorBspeed, vSpeed);
+
+  delay(turn_delay);
+  
+  }
+
+if(right_sensor_state < 500 && left_sensor_state < 500)
+{ 
+  Serial.println("stop");
+  
+  analogWrite (motorAspeed, 0);
+  analogWrite (motorBspeed, 0);
+  
+  }
+
+ 
 }
-void forward(){  //forword
-digitalWrite(in1, HIGH); //Right Motor forword Pin 
-digitalWrite(in2, LOW);  //Right Motor backword Pin 
-digitalWrite(in3, LOW);  //Left Motor backword Pin 
-digitalWrite(in4, HIGH); //Left Motor forword Pin 
-}
-void turnRight(){ //turnRight
-digitalWrite(in1, LOW);  //Right Motor forword Pin 
-digitalWrite(in2, HIGH); //Right Motor backword Pin  
-digitalWrite(in3, LOW);  //Left Motor backword Pin 
- digitalWrite(in4, HIGH); //Left Motor forword Pin 
-}
-void turnLeft(){ //turnLeft
-digitalWrite(in1, HIGH); //Right Motor forword Pin 
-digitalWrite(in2, LOW);  //Right Motor backword Pin 
-digitalWrite(in3, HIGH); //Left Motor backword Pin 
-digitalWrite(in4, LOW);  //Left Motor forword Pin 
-}
-void Stop(){ //stop
-digitalWrite(in1, LOW); //Right Motor forword Pin 
-digitalWrite(in2, LOW); //Right Motor backword Pin 
-digitalWrite(in3, LOW); //Left Motor backword Pin 
-digitalWrite(in4, LOW); //Left Motor forword Pin 
-}
+
+
+
+
+
+
+
+
+
+
+ 
