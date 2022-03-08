@@ -4,20 +4,27 @@
  
 |HLR(ID)|Description|
 --- | --- | 
-|HLR01|	Senses the time to time temperature|
-|HLR02|	Auto shutoff after specified time duration|	
-|HLR03|	Rings the buzzer as soon as cooking is done|
-|HLR04| Faster cooking due to induction heating technology|
-|HLR05| Shows the status on the LED screen|
+|HLR01| Detect the type of the slot (Resident or Visitor)
+and the state of the slot|
+|HLR02|	Park itself at the appropriate available slot
+closest to the OUT sign (Exit) |	
+|HLR03|	Display the slot numbers that are available, on 
+the LCD|
+|HLR04| Senses any obstacle is there on the path|
+
 
 ## **Low Level Requriements**
    
 |LLR(ID)|Description|
 --- | --- | 
-|LLR01| Sensor sends the high if overheating is detected|
-|LLR02| |
-|LLR03| The sensor sends high if temperature is High else sends low  |
-|LLR04| The processor takes the input|	
-|LLR05| The information should be displayed on the LED screen|
+|LLR01| The robot will sound a buzzer for each occupied
+slot irrespective of its type|
+|LLR02| As soon as the robot reaches the OUT position it
+will turn and park itself at the visitor slot closest to
+the OUT position |
+|LLR03| Display the available resident and visitor slot
+numbers on the LCD |
+|LLR04| The sensor takes the input|	
+
 
 
