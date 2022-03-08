@@ -1,5 +1,6 @@
 ## Block Diagram
-![Line-Follower-Circuit-Diagram](https://user-images.githubusercontent.com/98813735/157264217-037fb439-bd9f-4b5c-925d-8d77a376e3f1.png)
+![line-follower-robot-circuit_0pevNNZFBY](https://user-images.githubusercontent.com/98813735/157267875-2be0e66d-8b9c-478c-bb3a-c60bf47e2182.gif)
+
 
 
 
